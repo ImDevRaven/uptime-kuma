@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: uptime-kuma
+    env: docker
+    plan: starter  # Use 'starter' for always-on. 'free' will sleep after inactivity.
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    disk:
+      name: uptime-kuma-data
+      mountPath: /app/data
+      sizeGB: 1
